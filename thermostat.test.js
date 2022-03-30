@@ -5,4 +5,8 @@ describe('Thermostat', () => {
     const sut = new Thermostat();
     expect(sut.temperature).toEqual(20)
   });
+  it('can get temperature', () => {
+    const sut = new Thermostat();
+    expect(sut.getTemperature()).toEqual(20)
+  })
 });
