@@ -34,4 +34,11 @@ describe('Thermostat', () => {
     sut.setPowerSavingMode(false)
     expect(sut.powerSavingMode).toStrictEqual(false)
   })
+  it('can reset the temperature to 20', () => {
+    const sut = new Thermostat();
+    sut.up();
+    sut.up();
+    sut.reset();
+    expect(sut.getTemperature()).toEqual(20)
+  });
 });
