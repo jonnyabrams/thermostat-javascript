@@ -63,4 +63,23 @@ describe('Thermostat', () => {
     }
     expect(sut.getTemperature()).toEqual(32)
   });
+  it('reports on low energy usage', () => {
+    const sut = new Thermostat();
+    for (let i = 0 ; i < 3 ; i++) {
+      sut.down();
+    }
+    expect(sut.currentEnergyUsage()).toEqual('Low usage')
+  });
+  it('reports on high energy usage', () => {
+    const sut = new Thermostat();
+    sut.setPowerSavingMode(false);
+    for (let i = 0 ; i < 10 ; i++) {
+      sut.up();
+    }
+    expect(sut.currentEnergyUsage()).toEqual('High usage')
+  });
+  it('reports on medium energy usage', () => {
+    const sut = new Thermostat();
+    expect(sut.currentEnergyUsage()).toEqual('Medium usage')
+  });
 });
