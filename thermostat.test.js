@@ -55,4 +55,12 @@ describe('Thermostat', () => {
     }
     expect(sut.getTemperature()).toEqual(25)
   });
+  it('has a max temp of 32 degrees if PSM is off', () => {
+    const sut = new Thermostat();
+    sut.setPowerSavingMode(false);
+    for (let i = 0 ; i < 15 ; i++) {
+      sut.up();
+    }
+    expect(sut.getTemperature()).toEqual(32)
+  });
 });
