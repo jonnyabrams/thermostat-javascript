@@ -11,13 +11,18 @@ describe('Thermostat', () => {
   })
   it('can increase temperature', () => {
     const sut = new Thermostat();
-    sut.up()
+    sut.up();
     expect(sut.getTemperature()).toEqual(21)
   });
   it('can increase temperature by 2', () => {
     const sut = new Thermostat();
-    sut.up()
-    sut.up()
+    sut.up();
+    sut.up();
     expect(sut.getTemperature()).toEqual(22)
+  });
+  it('can decrease temperature by', () => {
+    const sut = new Thermostat();
+    sut.down();
+    expect(sut.getTemperature()).toEqual(19)
   });
 });
