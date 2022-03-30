@@ -48,4 +48,11 @@ describe('Thermostat', () => {
     }
     expect(sut.getTemperature()).toEqual(10)
   })
+  it('has a max temp of 25 degrees if PSM is on', () => {
+    const sut = new Thermostat();
+    for (let i = 0 ; i < 7 ; i++) {
+      sut.up();
+    }
+    expect(sut.getTemperature()).toEqual(25)
+  });
 });
