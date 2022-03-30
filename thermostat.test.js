@@ -41,4 +41,11 @@ describe('Thermostat', () => {
     sut.reset();
     expect(sut.getTemperature()).toEqual(20)
   });
+  it('minimum temperature is 10 degrees', () => {
+    const sut = new Thermostat();
+    for (let i = 0 ; i < 12 ; i++) {
+      sut.down();
+    }
+    expect(sut.getTemperature()).toEqual(10)
+  })
 });
