@@ -29,4 +29,9 @@ describe('Thermostat', () => {
     const sut = new Thermostat();
     expect(sut.powerSavingMode).toBe(true)
   });
+  it('can change power saving mode', () => {
+    const sut = new Thermostat();
+    sut.setPowerSavingMode(false)
+    expect(sut.powerSavingMode).toStrictEqual(false)
+  })
 });

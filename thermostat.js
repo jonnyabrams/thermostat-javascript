@@ -3,7 +3,7 @@ class Thermostat {
     this.temperature = temperature
     this.powerSavingMode = powerSavingMode
   }
-  
+
   getTemperature() {
     return this.temperature
   }
@@ -14,6 +14,10 @@ class Thermostat {
 
   down() {
     this.temperature--
+  }
+
+  setPowerSavingMode(boolean) {
+    this.powerSavingMode = boolean
   }
 }
 
