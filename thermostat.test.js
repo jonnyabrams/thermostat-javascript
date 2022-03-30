@@ -25,4 +25,8 @@ describe('Thermostat', () => {
     sut.down();
     expect(sut.getTemperature()).toEqual(19)
   });
+  it('has power saving mode on by default', () => {
+    const sut = new Thermostat();
+    expect(sut.powerSavingMode).toBe(true)
+  });
 });
